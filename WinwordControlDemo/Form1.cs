@@ -5,8 +5,8 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
 using System.Runtime.InteropServices;
-using msWord = Microsoft.Office.Interop.Word;
-using WinWordControl;
+//using msWord = Microsoft.Office.Interop.Word;
+//using WinWordControl;
 
 namespace WinWordTestApp
 {
@@ -57,14 +57,12 @@ namespace WinWordTestApp
         private System.Windows.Forms.Button load;
         private MyWordControl winWordControl1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Restore;
         private System.Windows.Forms.Button close;
         private Button btnNewForm;
 
         private string formName;
 
-        private Microsoft.Office.Interop.Word.Application wd;
+        //private Microsoft.Office.Interop.Word.Application wd;
         private int wordWnd = 0;
 
         /// <summary>
@@ -75,7 +73,7 @@ namespace WinWordTestApp
         public Form1()
         {
             this.formName = getFormRunningNumber();
-            this.wd = new Microsoft.Office.Interop.Word.Application();
+            //this.wd = new Microsoft.Office.Interop.Word.Application();
             InitializeComponent();
         }
 
@@ -104,16 +102,15 @@ namespace WinWordTestApp
         private void InitializeComponent()
         {
             this.load = new System.Windows.Forms.Button();
-            this.winWordControl1 = new MyWordControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Restore = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.btnNewForm = new System.Windows.Forms.Button();
+            this.winWordControl1 = new WinWordTestApp.MyWordControl();
             this.SuspendLayout();
             // 
             // load
             // 
+            this.load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.load.Location = new System.Drawing.Point(592, 24);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(68, 32);
@@ -121,39 +118,14 @@ namespace WinWordTestApp
             this.load.Text = "load";
             this.load.Click += new System.EventHandler(this.load_Click);
             // 
-            // winWordControl1
-            // 
-            this.winWordControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.winWordControl1.Location = new System.Drawing.Point(0, 0);
-            this.winWordControl1.Name = "winWordControl1";
-            this.winWordControl1.Size = new System.Drawing.Size(560, 389);
-            this.winWordControl1.TabIndex = 2;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "WordDateien (*.doc)|*.doc";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(592, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "PreActivate";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Restore
-            // 
-            this.Restore.Location = new System.Drawing.Point(592, 208);
-            this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(68, 32);
-            this.Restore.TabIndex = 4;
-            this.Restore.Text = "Restore Word";
-            this.Restore.Click += new System.EventHandler(this.Restore_Click);
-            // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(592, 72);
+            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close.Location = new System.Drawing.Point(592, 66);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(68, 32);
             this.close.TabIndex = 5;
@@ -162,12 +134,23 @@ namespace WinWordTestApp
             // 
             // btnNewForm
             // 
-            this.btnNewForm.Location = new System.Drawing.Point(592, 267);
+            this.btnNewForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewForm.Location = new System.Drawing.Point(592, 111);
             this.btnNewForm.Name = "btnNewForm";
             this.btnNewForm.Size = new System.Drawing.Size(68, 32);
             this.btnNewForm.TabIndex = 6;
             this.btnNewForm.Text = "New Form";
             this.btnNewForm.Click += new System.EventHandler(this.btnNewForm_Click);
+            // 
+            // winWordControl1
+            // 
+            this.winWordControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.winWordControl1.Location = new System.Drawing.Point(0, 0);
+            this.winWordControl1.Name = "winWordControl1";
+            this.winWordControl1.Size = new System.Drawing.Size(586, 383);
+            this.winWordControl1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -175,13 +158,13 @@ namespace WinWordTestApp
             this.ClientSize = new System.Drawing.Size(672, 389);
             this.Controls.Add(this.btnNewForm);
             this.Controls.Add(this.close);
-            this.Controls.Add(this.Restore);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.winWordControl1);
             this.Controls.Add(this.load);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.OnActivate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -267,6 +250,7 @@ namespace WinWordTestApp
             //SetWindowPos(wordWnd, this.Handle.ToInt32(), 0, 0, this.Bounds.Width - 20, this.Bounds.Height - 20, SWP_NOZORDER | SWP_NOMOVE | SWP_DRAWFRAME);
 
             Form1 frmForm1 = new Form1();
+            winWordControl1.PreActivate();
             frmForm1.Show();
         }
 
@@ -288,6 +272,12 @@ namespace WinWordTestApp
 
             //winWordControl1.PreActivate();
             //WinWordControl.WinWordControl.FindWindow(null, this.Text);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //winWordControl1.CloseControl();
+            Console.WriteLine("=== FormClosing called ===");
         }
     }
 }
