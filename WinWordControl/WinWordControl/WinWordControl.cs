@@ -283,21 +283,25 @@ namespace WinWordControl
                 catch
                 {
                 }
-                /*
-				try
-				{
-					wd.ActiveWindow.DisplayRightRuler=false;
-					wd.ActiveWindow.DisplayScreenTips=false;
-					wd.ActiveWindow.DisplayVerticalRuler=false;
-					wd.ActiveWindow.DisplayRightRuler=false;
-					wd.ActiveWindow.ActivePane.DisplayRulers=false;
-					wd.ActiveWindow.ActivePane.View.Type = Word.WdViewType.wdWebView; 
-					//wd.ActiveWindow.ActivePane.View.Type = Word.WdViewType.wdPrintView;//wdWebView; // .wdNormalView;
-				}
-				catch
-				{
-				}
-				*/
+
+
+
+                // =============================================================================================
+                // Display for word property
+                // =============================================================================================
+                try
+                {
+                    wd.ActiveWindow.DisplayRightRuler = true;
+                    wd.ActiveWindow.DisplayScreenTips = true;
+                    wd.ActiveWindow.DisplayVerticalRuler = true;
+                    wd.ActiveWindow.DisplayRightRuler = true;
+                    wd.ActiveWindow.ActivePane.DisplayRulers = true;
+                    wd.ActiveWindow.ActivePane.View.Type = Word.WdViewType.wdWebView;
+                    //wd.ActiveWindow.ActivePane.View.Type = Word.WdViewType.wdPrintView;//wdWebView; // .wdNormalView;
+                }
+                catch
+                {
+                }
 
                 /// Code Added
                 /// Disable the specific buttons of the command bar

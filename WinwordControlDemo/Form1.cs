@@ -16,6 +16,8 @@ namespace WinWordTestApp
     public class Form1 : System.Windows.Forms.Form
     {
 
+        
+
         // ==============================================================================================
         // User32.dll
         // ==============================================================================================
@@ -55,7 +57,7 @@ namespace WinWordTestApp
         // ==============================================================================================
 
         private System.Windows.Forms.Button load;
-        private MyWordControl winWordControl1;
+        private WinWordControl.WinWordControl winWordControl1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button close;
         private Button btnNewForm;
@@ -70,8 +72,14 @@ namespace WinWordTestApp
         /// </summary>
         private System.ComponentModel.Container components = null;
 
+        //Log4Net
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(Form1));
+
+
+        
         public Form1()
         {
+            log.Warn("Start for form1 test Log4Net");
             this.formName = getFormRunningNumber();
             //this.wd = new Microsoft.Office.Interop.Word.Application();
             InitializeComponent();
@@ -105,7 +113,7 @@ namespace WinWordTestApp
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.close = new System.Windows.Forms.Button();
             this.btnNewForm = new System.Windows.Forms.Button();
-            this.winWordControl1 = new WinWordTestApp.MyWordControl();
+            this.winWordControl1 = new WinWordControl.WinWordControl();
             this.SuspendLayout();
             // 
             // load
@@ -120,7 +128,12 @@ namespace WinWordTestApp
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "WordDateien (*.doc)|*.doc";
+            this.openFileDialog1.Filter = "ms word 2003(*.doc)|*.doc|ms word 2007(*.docx)|*.docx";
+            this.openFileDialog1.Title = "Please selected upload file";
+            this.openFileDialog1.DefaultExt = "doc";
+            this.openFileDialog1.CheckFileExists = true;
+            this.openFileDialog1.CheckPathExists = true;
+
             // 
             // close
             // 
@@ -177,6 +190,7 @@ namespace WinWordTestApp
         [STAThread]
         static void Main()
         {
+            log.Info("Start program WinwordControlTestApp");
             Application.Run(new Form1());
         }
 

@@ -22,3 +22,7 @@ D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\bin\Debug\WinWordControl.dll
 D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\obj\Debug\WinWordTestApp.csprojResolveAssemblyReference.cache
 D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\obj\Debug\WinWordTestApp.Form1.resources
 D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\obj\Debug\WinWordTestApp.csproj.GenerateResource.Cache
+D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\bin\Debug\WinWordControl.pdb
+D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\bin\Debug\log4net.config
+D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\bin\Debug\log4net.dll
+D:\CS_PROJECTS\WinWordControl\WinwordControlDemo\bin\Debug\log4net.xml
