@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinWordTestApp", "WinWordTestApp.csproj", "{CAF6AF69-00AA-40DA-8F96-2AEE14E022AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CAF6AF69-00AA-40DA-8F96-2AEE14E022AD}.Debug.ActiveCfg = Debug|.NET
+		{CAF6AF69-00AA-40DA-8F96-2AEE14E022AD}.Debug.Build.0 = Debug|.NET
+		{CAF6AF69-00AA-40DA-8F96-2AEE14E022AD}.Release.ActiveCfg = Release|.NET
+		{CAF6AF69-00AA-40DA-8F96-2AEE14E022AD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

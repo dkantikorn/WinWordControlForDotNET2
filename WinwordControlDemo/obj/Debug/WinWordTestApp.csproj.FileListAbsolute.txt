@@ -1,0 +1,12 @@
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\WinWordTestApp.exe
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\WinWordTestApp.pdb
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\Interop.Office.dll
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\Interop.VBIDE.dll
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\Interop.Word.dll
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\bin\Debug\WinWordControl.dll
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.Form1.resources
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.csproj.GenerateResource.Cache
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.exe
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.pdb
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.csproj.ResolveComReference.cache
+C:\Users\DK_Antikorn\Desktop\Word Example\winwordcontrol_demo\obj\Debug\WinWordTestApp.csprojResolveAssemblyReference.cache
